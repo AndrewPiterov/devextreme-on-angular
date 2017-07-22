@@ -1,0 +1,35 @@
+<h2>{{title}}</h2>
+
+<div class="col-md-6">
+    <button class="btn btn-primary" (click)="rundomize()">{{rundomNumber}}</button>
+</div>
+<div class="col-md-6">
+    <dx-data-grid (onCellClick)="cellClicked($event)"
+    id="gridContainer"
+    [dataSource]="employees"
+    [allowColumnReordering]="true"
+    [allowColumnResizing]="true"
+    [columnAutoWidth]="true">
+    <dxo-column-chooser [enabled]="true"></dxo-column-chooser>
+    <dxo-column-fixing [enabled]="true"></dxo-column-fixing>
+
+    <dxi-column [width]="100" [allowFiltering]="false" 
+        dataField="IsBinded"
+        [allowSorting]="false" 
+        dataType="boolean"
+        [fixed]="true">
+    </dxi-column>
+
+    <dxi-column dataField="BirthDate" dataType="date"></dxi-column>
+    <dxi-column dataField="HireDate" dataType="date"></dxi-column>
+    <dxi-column dataField="Position" alignment="right"></dxi-column>
+    <dxi-column dataField="Address" [width]="230"></dxi-column>
+    <dxi-column dataField="City"></dxi-column>
+    <dxi-column dataField="State"></dxi-column>
+    <dxi-column dataField="Zipcode" [visible]="false"></dxi-column>
+    <dxi-column dataField="HomePhone"></dxi-column>
+    <dxi-column dataField="MobilePhone"></dxi-column>
+    <dxi-column dataField="Skype"></dxi-column>
+    <dxi-column dataField="Email"></dxi-column>
+</dx-data-grid>
+</div>
